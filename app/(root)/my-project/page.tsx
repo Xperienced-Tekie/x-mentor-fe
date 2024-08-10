@@ -1,7 +1,7 @@
 export default function Page() {
     return (
         <div className="">
-            This is the human mentor page
+            This is the my project page
         </div>
     )
 }

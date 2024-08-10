@@ -22,3 +22,7 @@ body {
   background-clip: text;
   text-fill-color: transparent;
 }
+
+.gradient-bg {
+  background: linear-gradient(180deg, #20597E, #308AAC, #A989B3);
+}
