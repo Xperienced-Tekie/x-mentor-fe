@@ -5,9 +5,10 @@ import { ReactNode, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { BugIcon, ChevronBack, CodeChallengesIcon, CodeDemonButton, CommunityIcon, Docker, HumanMentorIcon, NotificationButton, PremiumButton, ProjectIcon } from "./Button";
+import { CodeDemonButton, NotificationButton, PremiumButton } from "./Button";
 import { SearchBar } from "./Search";
 import { ProfileBar } from "./ProfileBar";
+import { BugIcon, ChevronBack, CodeChallengesIcon, CommunityIcon, Docker, HumanMentorIcon, ProjectIcon } from "./Icons";
 
 export function NavBar() {
     return (
