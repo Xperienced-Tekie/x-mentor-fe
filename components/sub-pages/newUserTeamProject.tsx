@@ -8,7 +8,7 @@ export default function NewTeamProjectPage() {
             </h2>
             <div className="mt-10 grid grid-cols-12">
                 <div className="col-span-4 py-6 pr-6">
-                    <ProjectCard />
+                    <ProjectCard projectUrl="/team-project/tp/664747" />
                 </div>
                 <div className="col-span-4 py-6 pr-6">
                     <ProjectCard />

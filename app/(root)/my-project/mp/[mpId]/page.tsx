@@ -1,4 +1,4 @@
-import ProjectWorkSpace from "@/components/pages/projectWorkspace";
+import ProjectWorkSpace from "@/components/pages/myProjectWorkspace";
 
 interface PageProps {
     params: {

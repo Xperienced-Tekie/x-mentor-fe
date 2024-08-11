@@ -82,3 +82,29 @@ export function HumanMentorIcon() {
         </div>
     );
 }
+
+
+export function MenuIcon() {
+    return (
+        <div className="">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 34V29.3333H27.5556V34H3ZM34.3556 31.6667L24.9111 20L34.3556 8.33333L37 11.6L30.2 20L37 28.4L34.3556 31.6667ZM3 22.3333V17.6667H21.8889V22.3333H3ZM3 10.6667V6H27.5556V10.6667H3Z" fill="currentColor" />
+            </svg>
+        </div>
+    );
+}
+
+export function CloseIcon() {
+    return (
+        <div className="">
+            <svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_258_1107" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="71" height="71">
+                    <rect y="33.8115" width="50" height="50" transform="rotate(-42.5494 0 33.8115)" fill="currentColor" />
+                </mask>
+                <g mask="url(#mask0_258_1107)">
+                    <path d="M35.1971 38.2668L25.9885 46.7196L23.1708 43.6501L32.3795 35.1973L23.9267 25.9886L26.9963 23.171L35.4491 32.3796L44.6578 23.9268L47.4754 26.9964L38.2667 35.4492L46.7195 44.6579L43.65 47.4755L35.1971 38.2668Z" fill="currentColor" />
+                </g>
+            </svg>
+        </div>
+    );
+}
