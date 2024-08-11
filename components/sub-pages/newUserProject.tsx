@@ -8,7 +8,7 @@ export default function NewMyProjectPage() {
             </h2>
             <div className="mt-10 grid grid-cols-12">
                 <div className="col-span-4 py-6 pr-6">
-                    <ProjectCard />
+                    <ProjectCard projectUrl="/my-project/mp/hfh7474" />
                 </div>
                 <div className="col-span-4 py-6 pr-6">
                     <ProjectCard />

@@ -14,7 +14,10 @@ export function GitHubButton() {
     )
 }
 
-export function PremiumButton() {
+interface PremiumButtonProps {
+    name: string
+}
+export function PremiumButton({ name }: PremiumButtonProps) {
     return (
         <button className="flex justify-center items-center gap-3 gradient-bg rounded-full px-10 py-3 text-white">
             <Image
@@ -23,7 +26,7 @@ export function PremiumButton() {
                 width={20}
                 height={20}
             />
-            Premium
+            {name}
         </button>
     )
 }
@@ -54,11 +57,14 @@ export function NotificationButton() {
     )
 }
 
+interface JoinProjectButtonProps {
+    name?: string;
+}
 
-export function JoinProjectButton() {
+export function JoinProjectButton(params: JoinProjectButtonProps) {
     return (
         <button className="w-full bg-[#153A61] p-5 rounded-full text-white">
-            Add Project
+            {params.name ? (params.name):("Add Project")}
         </button>
     )
 }

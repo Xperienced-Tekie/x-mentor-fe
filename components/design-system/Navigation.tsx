@@ -25,7 +25,7 @@ export function NavBar() {
             </div>
             <div className="flex items-center justify-center gap-5">
                 <div className="">
-                    <PremiumButton />
+                    <PremiumButton name="Premium" />
                 </div>
                 <div className="">
                     <CodeDemonButton />

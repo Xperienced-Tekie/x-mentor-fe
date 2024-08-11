@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { JoinProjectButton } from "./Button";
+import Link from "next/link";
 
-export default function ProjectCard(){
+
+interface ProjectCardProps {
+    projectUrl?: string;
+}
+
+export default function ProjectCard(params: ProjectCardProps) {
     return (
         <div className="rounded-3xl bg-[#0E1018]">
             <Image
@@ -13,7 +19,14 @@ export default function ProjectCard(){
             />
             <div className="p-5 mt-3">
                 <h2 className="text-[32px] text-white text-center dark:text-white font-bold mb-3">Devier</h2>
-                <JoinProjectButton />
+                {params.projectUrl ? (
+                    <Link href={params.projectUrl}>
+                        <JoinProjectButton />
+                    </Link>
+                ) : (
+                    <JoinProjectButton />
+                )}
+
             </div>
         </div>
     )
