@@ -57,7 +57,7 @@ export function NotificationButton() {
 
 export function JoinProjectButton() {
     return (
-        <button className="w-full bg-[#153A61] p-5 rounded-full">
+        <button className="w-full bg-[#153A61] p-5 rounded-full text-white">
             Add Project
         </button>
     )

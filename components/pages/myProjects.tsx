@@ -3,7 +3,7 @@ import OldMyProjectPage from "../sub-pages/oldUserProject";
 
 export default function MyProjectsPage(){
     return (
-        // <NewMyProjectPage />
-        <OldMyProjectPage />
+        <NewMyProjectPage />
+        // <OldMyProjectPage />
     )
 }

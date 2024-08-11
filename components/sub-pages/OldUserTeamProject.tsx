@@ -1,10 +1,10 @@
 import ProjectCard from "../design-system/ProjectCard";
 
-export default function OldMyProjectPage() {
+export default function OldTeamProjectPage() {
     return (
         <div className="mt-12">
             <h2 className="text-[36px] text-[#030910] dark:text-white font-bold">
-                Ongoing Projects
+                Ongoing Team Projects
             </h2>
             <div className="mt-10 grid grid-cols-12">
                 <div className="col-span-4 py-6 pr-6">
@@ -19,7 +19,7 @@ export default function OldMyProjectPage() {
             </div>
 
             <h2 className="text-[36px] text-[#030910] dark:text-white font-bold mt-10">
-                Completed Projects
+                Completed Team Projects
             </h2>
             <div className="mt-10 grid grid-cols-12">
                 <div className="col-span-4 py-6 pr-6">
@@ -34,7 +34,7 @@ export default function OldMyProjectPage() {
             </div>
 
             <h2 className="text-[36px] text-[#030910] dark:text-white font-bold mt-10">
-                Add New Projects
+                Add New Team Projects
             </h2>
             <div className="mt-10 grid grid-cols-12">
                 <div className="col-span-4 py-6 pr-6">

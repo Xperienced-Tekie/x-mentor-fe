@@ -1,7 +1,9 @@
+import TeamProjectsPage from "@/components/pages/teamProjects";
+
 export default function Page() {
     return (
         <div className="">
-            This is the team project page
+            <TeamProjectsPage />
         </div>
     )
 }
