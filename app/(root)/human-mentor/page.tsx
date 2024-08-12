@@ -1,7 +1,7 @@
+import HumanMentorPage from "@/components/pages/humanMentor";
+
 export default function Page() {
     return (
-        <div className="">
-            This is the human mentor page
-        </div>
+        <HumanMentorPage />
     )
 }
