@@ -7,19 +7,17 @@ interface Props {
 }
 
 // Define the type for the challenge variable
-type ChallengeType = 'html' | 'js' | 'react';
+type ChallengeType = 'html' | 'js';
 
 export default function ChallengeWorkspace({ cId }: Props): JSX.Element | null {
     // Explicitly set the challenge variable type
-    const challenge: ChallengeType = "html";
+    const challenge: ChallengeType = "js";
 
     switch (challenge) {
         case 'html':
             return <HTMLChallenge />;
         case 'js':
             return <JSChallenge />;
-        case 'react':
-            return <ReactChallenge />;
         default:
             return null;
     }
