@@ -68,3 +68,15 @@ export function JoinProjectButton(params: JoinProjectButtonProps) {
         </button>
     )
 }
+
+interface ChallengesButtonProps {
+    name?: string;
+}
+
+export function ChallengesButton(params: ChallengesButtonProps) {
+    return (
+        <button className="w-full bg-[#A989B3] px-3 py-1 rounded-full text-white">
+            {params.name ? (params.name):("Start")}
+        </button>
+    )
+}

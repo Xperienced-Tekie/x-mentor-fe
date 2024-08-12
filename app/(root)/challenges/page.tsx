@@ -1,7 +1,7 @@
+import ChallengesPage from "@/components/pages/challenges";
+
 export default function Page() {
     return (
-        <div className="">
-            This is the challenges page
-        </div>
+        <ChallengesPage />
     )
 }
