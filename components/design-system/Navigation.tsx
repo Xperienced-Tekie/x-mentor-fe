@@ -8,10 +8,24 @@ import { usePathname } from 'next/navigation';
 import { CodeDemonButton, NotificationButton, PremiumButton } from "./Button";
 import { SearchBar } from "./Search";
 import { ProfileBar } from "./ProfileBar";
+import { FullModal } from "./FullModal";
 import { BugIcon, ChevronBack, CodeChallengesIcon, CommunityIcon, Docker, HumanMentorIcon, ProjectIcon } from "./Icons";
+import CodeDemon from "./codeDemon";
 
 export function NavBar() {
+
+    const [isModalOpen, setIsModalOpen] = useState<boolean | null>(null);
+
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(null);
+    };
+    
     return (
+        <>
         <nav className="w-full flex items-center justify-center py-2 px-[4rem] bg-[#FAFAFD] dark:bg-[#030910] border-b-[0.5px] border-[#979EB8]">
             <div className="flex-1">
                 <Link href={"/"}>
@@ -28,7 +42,7 @@ export function NavBar() {
                     <PremiumButton name="Premium" />
                 </div>
                 <div className="">
-                    <CodeDemonButton />
+                    <CodeDemonButton onclick={handleOpenModal} />
                 </div>
                 <div className="">
                     <SearchBar />
@@ -41,6 +55,10 @@ export function NavBar() {
                 </div>
             </div>
         </nav>
+        <FullModal isOpen={isModalOpen} onClose={handleCloseModal}>
+            <CodeDemon />
+        </FullModal>
+        </>
     )
 }
 

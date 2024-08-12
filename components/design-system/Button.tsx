@@ -31,9 +31,13 @@ export function PremiumButton({ name }: PremiumButtonProps) {
     )
 }
 
-export function CodeDemonButton() {
+interface CodeDemonProps {
+    onclick?: () => void;
+}
+
+export function CodeDemonButton({onclick}: CodeDemonProps) {
     return (
-        <button className="bg-[#0E1018] dark:bg-[#1B1F2E] rounded-full p-3">
+        <button className="bg-[#0E1018] dark:bg-[#1B1F2E] rounded-full p-3" onClick={onclick}>
             <Image
                 src={"/assets/icons/robot.svg"}
                 alt="codedemon_icon"
