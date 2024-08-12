@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { MenuIcon } from "../design-system/Icons";
 import TeamChat from "../sub-pages/teamChat";
+import TeamDetails from "../sub-pages/TeamDetails";
 
 interface TeamProjectWorkSpaceProps {
     tpId: string;
@@ -31,7 +32,7 @@ export default function TeamProjectWorkSpace({ tpId }: TeamProjectWorkSpaceProps
 
             <div className="mt-10 rounded-3xl">
                 {isMenuOpen ? (
-                    "Yes menu is open"
+                    <TeamDetails />
                 ):(
                     <TeamChat />
                 )}

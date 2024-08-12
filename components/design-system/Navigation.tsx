@@ -57,7 +57,7 @@ export function Content({ children }: ContentProps) {
     const handleSpecialState = () => setIsSpecialState(!isSpecialState);
 
     return (
-        <div className="flex">
+        <div className="flex items-start">
             {isOpen && (
                 <div className="flex-shrink-0 bg-[#FAFAFD] dark:bg-[#030910] border-r-[0.5px] border-[#979EB8] min-h-screen transition-all duration-300 ease-in-out relative">
                     {/* Sidebar Content */}
@@ -81,7 +81,7 @@ export function Content({ children }: ContentProps) {
 
                         {!isSpecialState ? (
                             <>
-                                <Link href="/my-project" className={`${pathname === '/my-project' ? 'text-white bg-[#0E1018] rounded-lg dark:text-[#030910] dark:bg-white' : 'text-[#030910] dark:text-white'} flex items-center gap-3 py-2 px-2`} onClick={handleSpecialState}>
+                                <Link href="/my-project" className={`${pathname === '/my-project' || pathname === "/my-project/mp" ? 'text-white bg-[#0E1018] rounded-lg dark:text-[#030910] dark:bg-white' : 'text-[#030910] dark:text-white'} flex items-center gap-3 py-2 px-2`} onClick={handleSpecialState}>
                                     <ProjectIcon />
                                     Project
                                 </Link>
@@ -104,11 +104,11 @@ export function Content({ children }: ContentProps) {
                             </>
                         ) : (
                             <>
-                                <Link href="/my-project" className={`${pathname === '/my-project' ? 'text-white bg-[#0E1018] rounded-lg dark:text-[#030910] dark:bg-white' : 'text-[#030910] dark:text-white'} flex items-center gap-3 py-2 px-2`}>
+                                <Link href="/my-project" className={`${pathname === '/my-project' || pathname === "/my-project/mp/[mpId]" ? 'text-white bg-[#0E1018] rounded-lg dark:text-[#030910] dark:bg-white' : 'text-[#030910] dark:text-white'} flex items-center gap-3 py-2 px-2`}>
                                     <ProjectIcon />
                                     My Projects
                                 </Link>
-                                <Link href="/team-project" className={`${pathname === '/team-project' ? 'text-white bg-[#0E1018] rounded-lg dark:text-[#030910] dark:bg-white' : 'text-[#030910] dark:text-white'} flex items-center gap-3 py-2 px-2`}>
+                                <Link href="/team-project" className={`${pathname === '/team-project' || pathname === "/team-project/tp" ? 'text-white bg-[#0E1018] rounded-lg dark:text-[#030910] dark:bg-white' : 'text-[#030910] dark:text-white'} flex items-center gap-3 py-2 px-2`}>
                                     <CommunityIcon />
                                     Team Projects
                                 </Link>
