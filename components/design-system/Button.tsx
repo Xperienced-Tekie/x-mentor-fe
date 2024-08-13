@@ -1,8 +1,12 @@
 import Image from "next/image";
 
-export function GitHubButton() {
+
+interface GitHubButtonParams {
+    onclick: () => void
+}
+export function GitHubButton(params: GitHubButtonParams) {
     return (
-        <button className="flex justify-center items-center gap-3 w-full bg-black dark:bg-[#1B4B7C] rounded-lg p-4">
+        <button className="flex justify-center items-center gap-3 w-full bg-black dark:bg-[#1B4B7C] rounded-lg p-4" onClick={params.onclick}>
             <Image
                 src={"/assets/icons/Github.svg"}
                 alt="github_icon"
