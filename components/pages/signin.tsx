@@ -7,7 +7,7 @@ export default function SignInPage() {
     const router = useRouter();
 
     const handleGithubRedirect = () => {
-        router.push("/")
+        router.push("critical-ardeen-xmentor-3c0812eb.koyeb.app/auth/github")
     }
     return (
         <div className="flex items-center justify-center h-screen">
