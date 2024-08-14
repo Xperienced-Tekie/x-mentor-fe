@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 
 import {
@@ -13,8 +14,10 @@ export async function middleware(req: NextRequest) {
     const { nextUrl } = req;
 
     // Retrieve token from cookies or URL query params
-    const cookieToken = req.cookies.get('authToken')?.value;
-    const token = cookieToken;
+    const cookieStore = cookies();
+    const cookie = cookieStore.get('authToken');
+    const token = cookie?.value;
+    console.log("token from mdware", token);
 
     // Determine the type of route
     const isApiAuthRoute = nextUrl.pathname.startsWith(apiPrefix);
