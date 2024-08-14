@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { cookies } from "next/headers";
-import jwt from "jsonwebtoken";
 
 import {
     apiPrefix,
@@ -9,15 +7,13 @@ import {
     DEFAULT_LOGIN_REDIRECT,
     publicRoutes,
 } from "@/routes";
+import { getSession } from "./actions/cookies.action";
 
 export async function middleware(req: NextRequest) {
     const { nextUrl } = req;
 
     // Retrieve token from cookies or URL query params
-    const cookieStore = cookies();
-    const cookie = cookieStore.get('authToken');
-    const token = cookie?.value;
-    console.log("token from mdware", token);
+    const token = await getSession();
 
     // Determine the type of route
     const isApiAuthRoute = nextUrl.pathname.startsWith(apiPrefix);
@@ -41,19 +37,6 @@ export async function middleware(req: NextRequest) {
             return NextResponse.redirect(new URL('/signin', req.url));
         }
 
-        // Check if JWT_SECRET is defined and is a string
-        if (typeof process.env.JWT_SECRET !== 'string') {
-            throw new Error('JWT_SECRET is not defined or not a string');
-        }
-
-        // Verify token if it exists
-        try {
-            jwt.verify(token, process.env.JWT_SECRET);
-        } catch (err) {
-            // Redirect to sign-in if token verification fails
-            return NextResponse.redirect(new URL('/signin', req.url));
-        }
-
         // Allow request to continue to dashboard if verification passes
         return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, req.url));
     }
@@ -62,7 +45,7 @@ export async function middleware(req: NextRequest) {
     if (!token && !isPublicRoute) {
         const callbackUrl = nextUrl.pathname;
         return NextResponse.redirect(
-            new URL(`/signin?callbackUrl=${encodeURIComponent(callbackUrl)}`, nextUrl)
+            new URL(`/signin`, nextUrl)
         );
     }
 

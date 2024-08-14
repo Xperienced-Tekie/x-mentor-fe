@@ -2,11 +2,15 @@ import Image from "next/image";
 
 
 interface GitHubButtonParams {
-    onclick: () => void
+    onclick: () => void;
+    disabled?: boolean;
 }
 export function GitHubButton(params: GitHubButtonParams) {
     return (
-        <button className="flex justify-center items-center gap-3 w-full bg-black dark:bg-[#1B4B7C] rounded-lg p-4" onClick={params.onclick}>
+        <button className="flex justify-center items-center gap-3 w-full bg-black dark:bg-[#1B4B7C] rounded-lg p-4" 
+        onClick={params.onclick}
+        disabled={params.disabled}
+        >
             <Image
                 src={"/assets/icons/Github.svg"}
                 alt="github_icon"
