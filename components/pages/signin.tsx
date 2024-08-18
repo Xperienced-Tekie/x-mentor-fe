@@ -2,33 +2,26 @@
 
 import { useRouter } from "next/navigation";
 import { GitHubButton } from "../design-system/Button";
-import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import setCookie from "@/actions/cookies.action";
+import { useSearchParams } from "next/navigation";
 
 export default function SignInPage() {
-    const searchParam = useSearchParams();
-    const token = searchParam.get('authToken');
     const router = useRouter();
     const [disable, setDisable] = useState(false);
+    const searchParams = useSearchParams();
+    const token = searchParams.get("authToken");
 
-    const validateAuthToken = async (token: any) => {
-
-        if (token) {
-            try {
-                // Assume an API call here
-                const response = await setCookie(token);
-                if (response) {
-                    return response;
-                }
-                return false;
-            } catch (error) {
-                console.error('Token validation failed:', error);
-                return false;
-            }
+    // Function to validate and set the token in a cookie
+    const validateAuthToken = async (token: string) => {
+        try {
+            const response = await setCookie(token);
+            return response !== false;  // Assuming setCookie returns false on failure
+        } catch (error) {
+            console.error('Token validation failed:', error);
+            return false;
         }
-        return false;
-    }
+    };
 
     useEffect(() => {
         const checkToken = async () => {
@@ -41,13 +34,13 @@ export default function SignInPage() {
                     setDisable(false);
                 }
             }
-        }
+        };
         checkToken();
-    }, [token]);
+    }, [token, router]);
 
     const handleGithubRedirect = () => {
-        router.push("https://xmfe.veridaq.com/auth/github");
-    }
+        router.push("https://xmbe.veridaq.com/auth/github");
+    };
 
     return (
         <div className="flex items-center justify-center h-screen">
@@ -61,5 +54,5 @@ export default function SignInPage() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
